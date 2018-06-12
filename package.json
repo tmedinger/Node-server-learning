@@ -2,7 +2,7 @@
   "name": "workoutlogserver",
   "version": "1.0.0",
   "description": "server for workout log app",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./node_modules/http-server/bin/http-server"
