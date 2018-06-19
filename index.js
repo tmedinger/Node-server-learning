@@ -4,7 +4,8 @@ const express = require("express");
 const app = express();
 const http = require("http").Server(app);
 const test = require("./controllers/testcontroller");
-const user = require("./controllers/usercontroller")
+const authTest = require("./controllers/authTestController");
+const user = require("./controllers/usercontroller");
 const sequelize = require("./db");
 const bodyParser = require("body-parser");
 
@@ -18,6 +19,8 @@ app.use("/api/user", user);
 app.use("/api/test", function(req, res){
     res.send("This is data from the /api/test endpoint. It's from the server.");
 });
+app.use(require("./middleware/validateSession"));
+app.use("/authtest", authTest);
 
 http.listen(3000, function(){
     console.log("Yay the server works!");
