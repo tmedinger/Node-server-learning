@@ -25,6 +25,7 @@ router.get("/getall", function (req, res) {
 
 router.post("/create", function (req, res) {
     let owner = req.user.id;
+    console.log(req.body)
     let authTestData = req.body.authtestdata.item;
 
     AuthTestModel.create({
